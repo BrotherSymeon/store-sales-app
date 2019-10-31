@@ -1,10 +1,16 @@
 
 use etsy_sales;
-DROP TABLE tempOrders;
-create TABLE tempOrders (
-  SaleDate VARCHAR(8) NOT NULL,
+
+DROP TABLE IF EXISTS Orders;
+
+create TABLE Orders (
   OrderId INT UNSIGNED NOT NULL,
   PRIMARY KEY (OrderId),
+  SaleDate VARCHAR(8) NOT NULL,
+  DayOfYear INT NOT NULL, 
+  MonthOfYear VARCHAR(7) NOT NULL, 
+  QuarterOfYear VARCHAR(7) NOT NULL, 
+  SoldThrough VARCHAR(20) NOT NULL,
   BuyerUserId VARCHAR(100),
   FullName VARCHAR(50),
   FirstName VARCHAR(50),
@@ -30,7 +36,7 @@ create TABLE tempOrders (
   Status VARCHAR(20),
   CardProcessingFees DECIMAL(6,2) DEFAULT 0.0,
   OrderNet DECIMAL(6,2) DEFAULT 0.0,
-  AdjustedOrderTotal DECIMAL(6,2) DEFAULT 0.00 NULL,
+  AdjustedOrderTotal DECIMAL(6,2) DEFAULT 0.00,
   AdjustedCardProcessingFees DECIMAL(6,2) DEFAULT 0.0,
   AdjustedNetOrderAmount DECIMAL(6,2) DEFAULT 0.0,
   Buyer VARCHAR(50),

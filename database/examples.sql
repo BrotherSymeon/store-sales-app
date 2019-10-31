@@ -2,7 +2,7 @@
 
 
 --You can use a combination of TIMESTAMPDIFF and integer division:
-
+--October 1, 2018
 set @FiscalYearStartDate = '2017-05-01';
 set @today = '2017-09-14';
 

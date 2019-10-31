@@ -1,0 +1,1 @@
+LOAD DATA INFILE '/tmp/test.txt' INTO TABLE test IGNORE 1 LINES;
